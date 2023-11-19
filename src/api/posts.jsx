@@ -14,7 +14,7 @@ export const getUserInfo = async () => {
     })
     return response.data
   } catch (error) {
-    toast.error("Error getting user info")
+    console.log("Error getting user info")
     throw error
   }
 }
@@ -66,7 +66,7 @@ export const getAllRecipes = async () => {
     const res = await api.get("/recipe/all")
     return res.data
   } catch (error) {
-    toast.error("Error getting all recipes")
+    console.log("Error getting all recipes")
   }
 }
 
@@ -76,7 +76,7 @@ export const getRecipeByID = async (id) => {
 
     return res.data
   } catch (error) {
-    toast.error("Error getting recipe")
+    console.log("Error getting recipe")
   }
 }
 
@@ -86,7 +86,7 @@ export const addComments = async (id, addCommentToServer) => {
     const res = await api.post(`/recipe/${id}`, { addCommentToServer })
     return res.data
   } catch (error) {
-    toast.error("Error posting comment")
+    console.log("Error posting comment")
   }
 }
 
@@ -123,7 +123,7 @@ export const toggleFav = async (id) => {
     )
     return res.data
   } catch (error) {
-    toast.error("Something went wrong")
+    toast.error("Error updating favorites")
     
   }
 }

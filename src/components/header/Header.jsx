@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <div className="container h_container">
-      <div style={{display:'flex',alignItems:'center'}}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <img
           style={{ cursor: "pointer" }}
           onClick={() => refresh("/")}
@@ -25,7 +25,9 @@ const Header = () => {
       </div>
       <div className="h_right">
         {!user ? (
-          <Button onClick={() => refresh("/login")}>Sign In</Button>
+          <Button className="comment_submit" onClick={() => refresh("/login")}>
+            Sign In
+          </Button>
         ) : (
           <AccountMenu user={user} />
         )}
