@@ -1,0 +1,35 @@
+.carousel_container {
+    margin-top: 1.5rem;
+}
+
+.carousel_container > p {
+    font-weight: 500;
+    font-size: var(--size-3xl);
+    color: rgba(0, 0, 0, 0.704);
+}
+
+/* xs */
+/* @media (min-width: 475px) {}
+
+/* sm */
+@media (min-width: 640px) {
+    .carousel_container {
+    margin-top: 2rem;
+}
+}
+
+/* med */
+/* @media (min-width: 768px) {} */
+
+/* large */
+@media (min-width: 1024px) {
+    .carousel_container {
+    margin-top: 3rem;
+}
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* xxl */
+/* @media (min-width: 1536px) {}  */

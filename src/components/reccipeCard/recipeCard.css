@@ -1,0 +1,41 @@
+.recipe_card {
+  position: relative;
+  display: flex;
+  width: 15rem;
+  height: 25rem;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  border-radius: 10px;
+  max-width: max-content;
+  background-color: rgba(183, 178, 178, 0.156);
+}
+
+.recipe_card > svg {
+  position: absolute;
+  right: 0.3rem;
+  top: 20rem;
+}
+
+.recipe_card > img {
+  width: 15rem;
+  height: 19rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.recipe_card > p {
+  margin-bottom: 0.5rem !important;
+  padding: 0 1rem;
+  padding-top: 1rem;
+  text-wrap: wrap;
+  font-size: var(--size-lg);
+}
+
+.recipe_card > span {
+  opacity: 0.8;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  font-size: var(--size-xs);
+  font-weight: 600;
+}

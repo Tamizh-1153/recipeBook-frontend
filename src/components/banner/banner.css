@@ -1,0 +1,34 @@
+.banner_container {
+  margin-top: 1.5rem;
+}
+
+.banner_img {
+  border-radius: 10px !important;
+}
+
+/* xs */
+/* @media (min-width: 475px) {}
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* med */
+@media (min-width: 768px) {
+  .banner_container {
+    width: 90%;
+    margin-top: 2rem;
+  }
+}
+
+/* large */
+@media (min-width: 1024px) {
+  .banner_container {
+    margin-top: 3rem;
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* xxl */
+/* @media (min-width: 1536px) {}  */

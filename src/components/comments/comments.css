@@ -1,0 +1,65 @@
+.comment_input {
+  width: 100%;
+}
+
+.comment_submit > span > span {
+  color: rgba(255, 255, 255, 0.915);
+}
+
+.comment_avatar >span {
+    text-transform: capitalize;
+}
+
+.comment_text {
+    margin: auto 0;
+}
+
+.comment_text > span {
+    font-size: var(--size-xs)!important;
+}
+
+/* xs */
+/* @media (min-width: 475px) {}
+
+/* sm */
+@media (min-width: 640px) {
+  .comment_input {
+    width: 50%;
+  }
+
+  .comment_text > span {
+    font-size: var(--size-base)!important;
+}
+}
+
+/* med */
+@media (min-width: 768px) {
+  .comment_avatar {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+
+  .comment_avatar >span {
+    font-size: var(--size-2xl);
+  }
+
+  
+}
+
+/* large */
+@media (min-width: 1024px) {
+  .comment_avatar {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  .comment_text > span {
+    font-size: var(--size-lg)!important;
+}
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* xxl */
+/* @media (min-width: 1536px) {}  */

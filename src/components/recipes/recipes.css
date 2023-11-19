@@ -1,0 +1,31 @@
+.recipes_container {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 4rem;
+  align-items: center;
+}
+
+/* xs */
+/* @media (min-width: 475px) {}
+
+/* sm */
+/* @media (min-width: 640px) {} */
+
+/* med */
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* large */
+/* @media (min-width: 1024px) {} */
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* xxl */
+/* @media (min-width: 1536px) {}  */
