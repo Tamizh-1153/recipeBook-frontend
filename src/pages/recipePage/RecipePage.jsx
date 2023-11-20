@@ -8,6 +8,7 @@ import Comments from "../../components/comments/Comments"
 import Heart from "../../components/heart/Heart"
 import useUserDetails from "../../hooks/useUserDetails"
 import { useSelector } from "react-redux"
+import ShareButtons from "../../components/shareButtons/ShareButtons"
 
 const RecipePage = () => {
   const { user } = useSelector((store) => store.user)
@@ -16,6 +17,7 @@ const RecipePage = () => {
     queryKey: ["recipe", id],
     queryFn: () => getRecipeByID(id),
   })
+  const url = window.location.href
 
   if (isLoading) {
     return (
@@ -60,6 +62,10 @@ const RecipePage = () => {
             </span>
           </Flex>
         </Flex>
+
+        <Group mt={'1.5rem'} justify="center">
+          <ShareButtons url={url} />
+        </Group>
 
         <Flex direction={"column"} mt={"2rem"}>
           <h3>Ingredients</h3>
