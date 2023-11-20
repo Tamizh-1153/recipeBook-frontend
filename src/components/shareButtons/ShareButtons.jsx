@@ -2,8 +2,6 @@ import React from "react"
 import {
   FacebookIcon,
   FacebookShareButton,
-  PinterestIcon,
-  PinterestShareButton,
   RedditIcon,
   RedditShareButton,
   TelegramIcon,
@@ -14,26 +12,26 @@ import {
   WhatsappShareButton,
 } from "react-share"
 
-const ShareButtons = ({ url }) => {
+const ShareButtons = ({ url,title }) => {
   return (
     <>
-      <FacebookShareButton url={url}>
+      <FacebookShareButton url={url} title={title}>
         <FacebookIcon size={32} round />
       </FacebookShareButton>
 
-      <TwitterShareButton url={url}>
+      <TwitterShareButton url={url} title={title}>
         <TwitterIcon size={32} round />
       </TwitterShareButton>
 
-      <WhatsappShareButton url={url}>
+      <WhatsappShareButton url={url} title={title}>
         <WhatsappIcon size={32} round />
       </WhatsappShareButton>
 
-      <TelegramShareButton url={url}>
+      <TelegramShareButton url={url} title={title}>
         <TelegramIcon size={32} round />
       </TelegramShareButton>
-      
-      <RedditShareButton url={url}>
+
+      <RedditShareButton url={url} title={title}>
         <RedditIcon size={32} round />
       </RedditShareButton>
     </>

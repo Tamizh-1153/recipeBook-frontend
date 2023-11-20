@@ -64,7 +64,7 @@ const RecipePage = () => {
         </Flex>
 
         <Group mt={'1.5rem'} justify="center">
-          <ShareButtons url={url} />
+          <ShareButtons url={url} title={data?.name} />
         </Group>
 
         <Flex direction={"column"} mt={"2rem"}>
