@@ -4,10 +4,12 @@ import "./comments.css"
 import { useEffect, useState } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { addComments } from "../../api/posts"
+import { useNavigate } from "react-router-dom"
 
 const Comments = ({ id, comments }) => {
   const queryClient = useQueryClient()
   const [addComment, setAddComment] = useState("")
+  const refresh=useNavigate()
 
   const [addCommentToServer, setAddCommentToServer] = useState({})
   const { user } = useSelector((store) => store.user)
@@ -54,7 +56,7 @@ const Comments = ({ id, comments }) => {
       )}
       {!user ? (
         <Group justify="center">
-          <Button className="comment_submit">Log in to comment</Button>
+          <Button onClick={()=>refresh('/login')} className="comment_submit">Log in to comment</Button>
         </Group>
       ) : (
         <Group mt={"1.5rem"}>

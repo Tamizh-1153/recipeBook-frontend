@@ -29,7 +29,7 @@ const Header = () => {
             Sign In
           </Button>
         ) : (
-          <AccountMenu user={user} />
+          <AccountMenu  user={user} />
         )}
       </div>
     </div>

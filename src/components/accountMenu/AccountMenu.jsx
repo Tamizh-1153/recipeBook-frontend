@@ -26,7 +26,13 @@ const AccountMenu = ({ user }) => {
   return (
     <Menu trigger="hover" width={200}>
       <MenuTarget>
-        <Avatar size="2.5rem" className="account_icon" color="cyan" radius="xl">
+        <Avatar
+          style={{ cursor: "pointer" }}
+          size="2.5rem"
+          className="account_icon"
+          color="cyan"
+          radius="xl"
+        >
           {user?.name.charAt(0)}
         </Avatar>
       </MenuTarget>
@@ -41,7 +47,7 @@ const AccountMenu = ({ user }) => {
         </MenuItem>
         <MenuItem
           onClick={() => {
-            refresh('/my_recipes') 
+            refresh("/my_recipes")
           }}
         >
           My Recipes
