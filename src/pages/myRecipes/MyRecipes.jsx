@@ -11,6 +11,7 @@ const MyRecipes = () => {
     queryKey: ["UserRecipes"],
     queryFn: myRecipes,
   })
+  console.log(data)
   
   return (
     <>
@@ -27,9 +28,15 @@ const MyRecipes = () => {
         </Container>
       ) : (
         <div className="container recipes_container">
-          {data?.map((recipe, i) => (
-            <RecipeCard visible={visible} key={i} recipe={recipe} />
-          ))}
+          {data?.length !== 0 ? (
+            data?.map((recipe, i) => (
+              <RecipeCard visible={visible} key={i} recipe={recipe} />
+            ))
+          ) : (
+            <span style={{marginTop:'2rem'}} className="font_Size">
+              No recipe added. Add recipe to view
+            </span>
+          )}
         </div>
       )}
     </>
