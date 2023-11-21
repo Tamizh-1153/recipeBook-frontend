@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Group } from "@mantine/core"
+import { Box, Button, Flex, Group, Text } from "@mantine/core"
 import { useMutation } from "@tanstack/react-query"
 import React from "react"
 import { addRecipe } from "../../api/posts"
@@ -32,9 +32,9 @@ export const UploadRecipe = ({
         image: "",
         addedBy: "",
       })
-      setActiveStep(0)
       refetch()
-      window.location.href='/'
+      setActiveStep(0)
+      refresh("/")
     },
   })
 
@@ -43,27 +43,62 @@ export const UploadRecipe = ({
       <Flex mt={"2rem"} direction={"column"} justify={"center"}>
         <img className="rp_image" src={recipeDetails.image} alt="loading" />
         <Flex mt={"2rem"} direction={"column"}>
-          <span className="font_Size">Name: {recipeDetails.name}</span>
-          <span className="font_Size">
-            Preparation time: {recipeDetails.prepTime}
-          </span>
-          <span className="font_Size">
-            Cooking time: {recipeDetails.cookTime}
-          </span>
-          <span className="font_Size">Serves: {recipeDetails.serves}</span>
-          <span className="font_Size">
-            Difficulty: {recipeDetails.difficulty}
-          </span>
-          <span className="font_Size">Cuisine: {recipeDetails.cuisine}</span>
-          <span className="font_Size">Recipe by: {recipeDetails.recipeBy}</span>
-          <span className="font_Size">
-            Ingredients: {recipeDetails.ingredients.join(",")}
-          </span>
-          <span className="font_Size">
-            Directions: {recipeDetails.directions.join(",")}
-          </span>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Name: </strong>
+              {recipeDetails.name}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Preparation time: </strong>
+              {recipeDetails.prepTime}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Cooking time: </strong>
+              {recipeDetails.cookTime}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Serves: </strong>
+              {recipeDetails.serves}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Difficulty: </strong>
+              {recipeDetails.difficulty}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Cuisine: </strong>
+              {recipeDetails.cuisine}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Recipe by: </strong>
+              {recipeDetails.recipeBy}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Ingredients: </strong>
+              {recipeDetails.ingredients.join(",")}
+            </span>
+          </Group>
+          <Group p={".3rem"}>
+            <span className="font_Size">
+              <strong>Directions: </strong>
+              {recipeDetails.directions.join(",")}
+            </span>
+          </Group>
         </Flex>
-        <Group mt={'1.5rem'} pb={'3rem'} justify="center">
+        <Group mt={"1.5rem"} pb={"3rem"} justify="center">
           <Button variant="default" onClick={prevStep}>
             Back
           </Button>

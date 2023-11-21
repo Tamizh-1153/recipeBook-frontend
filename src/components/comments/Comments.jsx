@@ -12,8 +12,7 @@ const Comments = ({ id, comments }) => {
   const [addCommentToServer, setAddCommentToServer] = useState({})
   const { user } = useSelector((store) => store.user)
 
-  useEffect(() => {
-  }, [comments])
+  useEffect(() => {}, [comments])
 
   const { mutate } = useMutation({
     mutationFn: () => addComments(id, addCommentToServer),
@@ -54,7 +53,9 @@ const Comments = ({ id, comments }) => {
         ))
       )}
       {!user ? (
-        <Button>Log in to comment</Button>
+        <Group justify="center">
+          <Button className="comment_submit">Log in to comment</Button>
+        </Group>
       ) : (
         <Group mt={"1.5rem"}>
           <Input

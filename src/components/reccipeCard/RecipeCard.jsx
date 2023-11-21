@@ -11,7 +11,7 @@ const RecipeCard = ({ recipe,visible }) => {
   return (
     <div
     style={{cursor:'pointer'}}
-      onClick={() => window.location.href=`/recipe/${recipe._id}`}
+      onClick={() => refresh(`/recipe/${recipe._id}`)}
       className="recipe_card"
     >
       {visible && user ? <Heart user={user} id={recipe?._id} /> : null}

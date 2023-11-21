@@ -11,8 +11,7 @@ const MyRecipes = () => {
     queryKey: ["UserRecipes"],
     queryFn: myRecipes,
   })
-  console.log(data)
-
+  
   return (
     <>
       <Header />

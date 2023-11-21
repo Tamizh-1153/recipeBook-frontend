@@ -2,9 +2,11 @@ import { Carousel, CarouselSlide } from "@mantine/carousel"
 import useGetAllRecipes from "../../hooks/useGetAllRecipes"
 import "./recipeCarousel.css"
 import { Tooltip } from "@mantine/core"
+import { useNavigate } from "react-router-dom"
 
 const RecipeCarousel = () => {
   const { data, isError, isLoading } = useGetAllRecipes()
+  const refresh = useNavigate()
 
   const filteredData = data?.slice(5, 12)
 
@@ -21,7 +23,7 @@ const RecipeCarousel = () => {
       >
         {filteredData?.map((recipe, i) => (
           <CarouselSlide
-            onClick={() => (window.location.href = `/recipe/${recipe._id}`)}
+            onClick={() => refresh(`/recipe/${recipe._id}`)}
             key={i}
           >
             <Tooltip withArrow label={recipe.name}>

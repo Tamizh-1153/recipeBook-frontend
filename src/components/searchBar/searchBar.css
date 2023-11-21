@@ -1,4 +1,38 @@
 .sb_container {
-    margin-top: 2rem;
-    width: 50%;
+  margin-top: 2rem;
+  width: 90%;
 }
+
+/* xs */
+@media (min-width: 475px) {
+    .sb_container {
+    width: 60%;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+    .sb_container {
+    width: 60%;
+  }
+}
+
+/* med */
+@media (min-width: 768px) {
+  .sb_container {
+    width: 70%;
+  }
+}
+
+/* large */
+@media (min-width: 1024px) {
+    .sb_container {
+    width: 50%;
+  }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {} */
+
+/* xxl */
+/* @media (min-width: 1536px) {}  */

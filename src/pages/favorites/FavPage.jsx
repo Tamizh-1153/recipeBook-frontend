@@ -2,15 +2,17 @@ import React, { useEffect } from "react"
 import Header from "../../components/header/Header"
 import { useQuery } from "@tanstack/react-query"
 import { myRecipes } from "../../api/posts"
-import { Container, Loader } from "@mantine/core"
+import { Center, Container, Loader } from "@mantine/core"
 import RecipeCard from "../../components/reccipeCard/RecipeCard"
 import { useSelector } from "react-redux"
-import useUserDetails from "../../hooks/useUserDetails"
+
 import useGetAllRecipes from "../../hooks/useGetAllRecipes"
+import useFavorites from "../../hooks/useFavorites"
 
 const FavPage = () => {
  
   useGetAllRecipes()
+  const {data,isLoading,isError} = useFavorites()
   const visible=false
   const { user } = useSelector((store) => store.user)
   const { recipes } = useSelector((store) => store.recipes)
@@ -18,8 +20,22 @@ const FavPage = () => {
 
   useEffect(() => {}, [user?.favorites])
 
+  if(isLoading){
+    return (
+      <Container>
+        <Center h={400}>
+          <Loader size="lg" type="dots" />
+        </Center>
+      </Container>
+    )
+  }
+
+  if (!isLoading && !isError) {
+    var { favorites } = data
+  }
+
   recipes?.map((recipe) => {
-    if (user?.favorites.includes(recipe?._id)) {
+    if (favorites?.includes(recipe?._id)) {
       favRecipesData.push(recipe)
     }
   })
@@ -27,7 +43,7 @@ const FavPage = () => {
   return (
     <>
       <Header />
-      {!user && !recipes ? (
+      {!recipes ? (
         <Container>
           <Loader
             mt={"10rem"}

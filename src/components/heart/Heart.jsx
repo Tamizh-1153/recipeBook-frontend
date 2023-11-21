@@ -1,19 +1,20 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useEffect, useState } from "react"
 import { AiFillHeart } from "react-icons/ai"
-import useUserDetails from "../../hooks/useUserDetails"
 import { toggleFav } from "../../api/posts"
+import useFavorites from "../../hooks/useFavorites"
 
 const Heart = ({ user, id }) => {
   const [heartColor, setHeartColor] = useState("#0000003c")
-  const { refetch } = useUserDetails()
-  const { favorites } = user
+  const queryClient = useQueryClient()
+  const { data, isLoading, isError, refetch } = useFavorites()
+  if (!isLoading && !isError) {
+    var { favorites } = data
+  }
 
   useEffect(() => {
     setHeartColor(() => checkFav(id, favorites))
   }, [favorites])
-
-  //console.log(favorites)
 
   const checkFav = (id, favorites) => {
     return favorites?.includes(id) ? "#fb6b83" : "#0000003c"
@@ -22,7 +23,9 @@ const Heart = ({ user, id }) => {
   const { mutate } = useMutation({
     mutationFn: () => toggleFav(id),
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["fav"] })
       refetch()
+  
     },
   })
 

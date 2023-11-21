@@ -81,7 +81,6 @@ export const getRecipeByID = async (id) => {
 }
 
 export const addComments = async (id, addCommentToServer) => {
-  console.log(addCommentToServer)
   try {
     const res = await api.post(`/recipe/${id}`, { addCommentToServer })
     return res.data
@@ -91,7 +90,6 @@ export const addComments = async (id, addCommentToServer) => {
 }
 
 export const addRecipe = async (recipeDetails) => {
-  console.log(recipeDetails)
   try {
     const res = await api.post(`/recipe/add/new`, { recipeDetails })
     return res.data
@@ -114,7 +112,6 @@ export const myRecipes = async () => {
 }
 
 export const toggleFav = async (id) => {
-  console.log(id);
   try {
     const res = await api.post(
       `/toggleFav/${id}`,
@@ -125,6 +122,17 @@ export const toggleFav = async (id) => {
   } catch (error) {
     toast.error("Error updating favorites")
     
+  }
+}
+
+export const getFavorites = async () => {
+  try {
+    const res = await api.get(`/getAllFav`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    })
+    return res.data
+  } catch (error) {
+    toast.error("Error getting favorites")
   }
 }
 

@@ -51,19 +51,23 @@ const Ingredients = ({
         }}
       >
         <Textarea
+          autosize
+          minRows={4}
           label="Ingredients"
           withAsterisk
           {...form.getInputProps("ingredientsData")}
           placeholder="Add ingredients separated by comma(,)"
         />
         <Textarea
+          autosize
+          minRows={4}
           label="Directions"
           withAsterisk
           {...form.getInputProps("directionsData")}
           placeholder="Add directions separated by comma(,)"
         />
 
-        <Group justify="center" position="center" mt={"xl"}>
+        <Group pb={"2rem"} justify="center" position="center" mt={"xl"}>
           <Button variant="default" onClick={prevStep}>
             Back
           </Button>

@@ -34,21 +34,21 @@ const AccountMenu = ({ user }) => {
         <MenuLabel>Account</MenuLabel>
         <MenuItem
           onClick={() => {
-            window.location.href = "/add_recipe"
+            refresh("/add_recipe")
           }}
         >
           Add Recipe
         </MenuItem>
         <MenuItem
           onClick={() => {
-            window.location.href = "/my_recipes"
+            refresh('/my_recipes') 
           }}
         >
           My Recipes
         </MenuItem>
         <MenuItem
           onClick={() => {
-            window.location.href = "/my_favorites"
+            refresh("/my_favorites")
           }}
         >
           Favorites

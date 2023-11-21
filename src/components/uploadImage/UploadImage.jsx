@@ -30,7 +30,6 @@ const UploadImage = ({
 
   const handleNext = () => {
     setRecipeDetails((prev) => ({ ...prev, image: imageURL }))
-    console.log(recipeDetails);
     nextStep()
   }
 
@@ -53,7 +52,7 @@ const UploadImage = ({
         </div>
       )}
 
-      <Group justify="center" position="center" mt={"xl"}>
+      <Group pb={'2rem'} justify="center" position="center" mt={"xl"}>
         <Button variant="default" onClick={prevStep}>
           Back
         </Button>

@@ -107,7 +107,7 @@ const RecipeDetails = ({ user, recipeDetails, setRecipeDetails, nextStep }) => {
           {...form.getInputProps("recipeBy")}
         />
 
-        <Group justify="center" mt={"xl"}>
+        <Group pb={"2rem"} justify="center" mt={"xl"}>
           <Button variant="default" type="submit">
             Next
           </Button>
