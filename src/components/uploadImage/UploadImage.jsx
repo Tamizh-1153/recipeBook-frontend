@@ -8,7 +8,7 @@ const UploadImage = ({
   nextStep,
   prevStep,
 }) => {
-  const [imageURL, setImageURL] = useState("")
+  const [imageURL, setImageURL] = useState(recipeDetails?.image)
   const cloudinaryRef = useRef()
   const widgetRef = useRef()
 

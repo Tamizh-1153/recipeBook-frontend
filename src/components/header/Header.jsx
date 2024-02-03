@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import useUserDetails from "../../hooks/useUserDetails"
 import AccountMenu from "../accountMenu/AccountMenu"
+import logo from '../../assets/logo.svg'
 
 const Header = () => {
   useUserDetails()
@@ -19,7 +20,7 @@ const Header = () => {
           style={{ cursor: "pointer" }}
           onClick={() => refresh("/")}
           className="h_image"
-          src="https://recipebook.io/public/images/logo.svg"
+          src={logo}
           alt="recipe book"
         />
       </div>

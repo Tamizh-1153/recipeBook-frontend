@@ -8,35 +8,34 @@ const Ingredients = ({
   nextStep,
   prevStep,
 }) => {
+  
   const form = useForm({
     initialValues: {
-      ingredientsData: recipeDetails.ingredients,
-      directionsData: recipeDetails.directions,
+      ingredients: recipeDetails?.ingredients,
+      directions: recipeDetails?.directions,
     },
     validate: {
-      ingredientsData: (value) =>
+      ingredients: (value) =>
         value?.length < 20 || value === null
           ? "Must be more than 20 characters"
           : null,
-      directionsData: (value) =>
+      directions: (value) =>
         value?.length < 20 || value === null
           ? "Must be more than 20 characters"
           : null,
     },
   })
 
-  const { ingredientsData, directionsData } = form.values
+  const { ingredients, directions } = form.values
 
   const handleSubmit = () => {
     const { hasErrors } = form.validate()
 
     if (!hasErrors) {
-      const ingredients = ingredientsData?.split(",")
-      const directions = directionsData?.split(",")
       setRecipeDetails((prev) => ({
         ...prev,
-        ingredients: ingredients,
-        directions: directions,
+        ingredients: ingredients?.split(","),
+        directions: directions?.split(","),
       }))
       nextStep()
     }
@@ -55,7 +54,7 @@ const Ingredients = ({
           minRows={4}
           label="Ingredients"
           withAsterisk
-          {...form.getInputProps("ingredientsData")}
+          {...form.getInputProps("ingredients")}
           placeholder="Add ingredients separated by comma(,)"
         />
         <Textarea
@@ -63,7 +62,7 @@ const Ingredients = ({
           minRows={4}
           label="Directions"
           withAsterisk
-          {...form.getInputProps("directionsData")}
+          {...form.getInputProps("directions")}
           placeholder="Add directions separated by comma(,)"
         />
 
